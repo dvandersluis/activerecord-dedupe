@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'active_record/dedupe'
 
 require 'active_record'
+require 'logger'
 require 'pry'
 
 RSpec.configure do |config|
@@ -19,3 +20,10 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec_status'
   config.disable_monkey_patching!
 end
+
+# This connection will do for database-independent bug reports.
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
+ActiveRecord::Base.logger = Logger.new(STDOUT)
+
+load File.dirname(__FILE__) + '/support/schema.rb'
+require File.dirname(__FILE__) + '/support/models.rb'
