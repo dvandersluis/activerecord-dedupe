@@ -26,8 +26,10 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activerecord', '>= 5'
   spec.add_dependency 'activesupport', '>= 5'
+  spec.add_dependency 'arel_extensions'
 
   spec.add_development_dependency 'bundler', '~> 2.1'
+  spec.add_development_dependency 'factory_bot'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rspec', '~> 3.0'

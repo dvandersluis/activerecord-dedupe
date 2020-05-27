@@ -5,3 +5,6 @@ end
 class Comment < ActiveRecord::Base
   belongs_to :user
 end
+
+class Subscriber < ActiveRecord::Base
+end
